@@ -53,14 +53,15 @@ function hoursToMinutes(array) {
     let regex = /(\d+)/g;
     let result = movie.duration.match(regex);
     let min = result.length == 2 ? (parseInt(result[0]) * 60) + parseInt(result[1]) : (parseInt(result[0]) * 60);
-    return {
-      title: movie.title,
-      year: movie.year,
-      director: movie.director,
-      duration: min,
-      genre: movie.genre,
-      score: movie.score
-    }
+    // return {
+    //   title: movie.title,
+    //   year: movie.year,
+    //   director: movie.director,
+    //   duration: min,
+    //   genre: movie.genre,
+    //   score: movie.score
+    // }
+    return {...movie, duration: min};
   });
 }
 
